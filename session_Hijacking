@@ -81,18 +81,4 @@ The vulnerability does not directly disrupt application availability but may ena
 
 
 
-Log in to the application using User 1's credentials and navigate to Risk > ARP Risk > Bookmarks.
-
-Create a new bookmark with a name and description.
-
-Open a different browser and log in to the application using User 2's credentials.
-
-Navigate to Risk > ARP Risk > Bookmarks as User 2. You will see the bookmark created by User 1 but can only read it (not edit it).
-
-Using a proxy tool (e.g., Burp Suite), intercept the HTTP request of User 1 editing the name or description of the bookmark.
-
-In the intercepted request, replace the cookies of User 1 with User 2's cookies.
-
-Send the modified request to the server.
-
-You will see that the name and description of the bookmark (created by User 1) are now changed by User 2.
+it is essential to implement robust server-side session management. When a user logs out, the session token should be invalidated on the server, ensuring it becomes unusable across all devices and browsers. This prevents unauthorized access using stolen or reused session tokens. Additionally, sessions should be contextually bound to specific attributes such as IP address, user-agent, or device fingerprinting. By validating these parameters with each request, the application can effectively prevent session hijacking and misuse in different environments. These measures will strengthen the application's overall security and safeguard user data.
