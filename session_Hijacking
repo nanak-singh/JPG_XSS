@@ -1,0 +1,80 @@
+Vulnerability Report: Improper Session Handling Leading to Session Hijacking
+Summary:
+The application demonstrates improper session handling, where logging out from one browser does not invalidate the session in another browser using the same session cookies. This behavior could allow an attacker to maintain unauthorized access to a session even after the legitimate user logs out, posing a significant security risk.
+
+Vulnerability Details:
+Vulnerability Type: Session Management Issue
+Severity: High
+Impact: Session Hijacking
+Description:
+When the session cookies are copied from one browser and pasted into another, the session is active in both browsers. Logging out from one browser does not invalidate the session in the other, indicating a failure in server-side session invalidation upon logout. This behavior allows an attacker to reuse session cookies obtained through any attack vector, such as XSS, without the user being aware.
+
+Steps to Reproduce:
+Start a Session:
+
+Log in to the application using Browser 1.
+Copy Cookies:
+
+Use a browser extension like Cookie Editor to extract and copy the session cookies from Browser 1.
+Replicate Session in Another Browser:
+
+Open Browser 2.
+Use the same cookie editor extension to paste the copied session cookies into Browser 2.
+Reload the application in Browser 2 to confirm the session is active.
+Log Out in Browser 2:
+
+Log out of the session in Browser 2 using the application's logout functionality.
+Check Session in Browser 1:
+
+Refresh the page in Browser 1. Observe that the session remains active, even though the user logged out from Browser 2.
+Impact:
+An attacker who obtains session cookies through XSS or other means can maintain unauthorized access to the user's session.
+The legitimate user is unaware that their session remains active elsewhere, leading to potential data compromise or abuse.
+Recommendations:
+Server-Side Session Invalidation:
+
+Implement server-side session management where logout invalidates the session token on the server, making it unusable across all devices and browsers.
+Bind Sessions to Context:
+
+Bind sessions to additional parameters such as IP address, user-agent, or device fingerprinting, and validate them for each request.
+Use Secure Cookies:
+
+Ensure session cookies are marked as HttpOnly, Secure, and SameSite=Strict to mitigate the risk of cookie theft.
+Session Timeout:
+
+Introduce session expiration and idle timeouts to reduce the attack window.
+Monitor Active Sessions:
+
+Provide users with a dashboard to view and manage active sessions, allowing them to terminate any unauthorized sessions.
+
+Attack Vector (AV):
+Network (N)
+The vulnerability can be exploited remotely over the network (e.g., via an attacker injecting stolen cookies).
+
+Attack Complexity (AC):
+Low (L)
+Exploiting the vulnerability does not require special conditions beyond stealing session cookies.
+
+Privileges Required (PR):
+None (N)
+The attacker does not need any prior authentication to exploit the vulnerability, assuming they can steal session cookies (e.g., via XSS or MITM).
+
+User Interaction (UI):
+Required (R)
+The attack requires some user interaction, such as visiting a malicious page to allow cookie theft.
+
+Scope (S):
+Unchanged (U)
+Exploiting the vulnerability does not impact components beyond the application.
+
+Confidentiality (C):
+High (H)
+Unauthorized access to a session can expose sensitive user data.
+
+Integrity (I):
+High (H)
+An attacker can perform actions within the application as the user, compromising data integrity.
+
+Availability (A):
+Low (L)
+The vulnerability does not directly disrupt application availability but may enable misuse.
