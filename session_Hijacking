@@ -78,3 +78,21 @@ An attacker can perform actions within the application as the user, compromising
 Availability (A):
 Low (L)
 The vulnerability does not directly disrupt application availability but may enable misuse.
+
+
+
+Log in to the application using User 1's credentials and navigate to Risk > ARP Risk > Bookmarks.
+
+Create a new bookmark with a name and description.
+
+Open a different browser and log in to the application using User 2's credentials.
+
+Navigate to Risk > ARP Risk > Bookmarks as User 2. You will see the bookmark created by User 1 but can only read it (not edit it).
+
+Using a proxy tool (e.g., Burp Suite), intercept the HTTP request of User 1 editing the name or description of the bookmark.
+
+In the intercepted request, replace the cookies of User 1 with User 2's cookies.
+
+Send the modified request to the server.
+
+You will see that the name and description of the bookmark (created by User 1) are now changed by User 2.
