@@ -1,6 +1,0 @@
-SD38819 - Super user with access to everything so all test case URLs (will share) would return data.
-HJ64350 - User is not part of C1C app so all test case URLs (will share) will return entitlement error.
-JR38826 - AEP Approver, this role doesn't have permission on credit analysis resource, so resource under analysis (will share sample) cannot be accessed by them.
-LF38827 - CRM Sales Officer, does not have permission on document_management resource so resource hosted under docadmin (will share sample) cannot be accessed by them.
-JO38825 - Collateral Officer, does not have permission for RISK_ADMIN resource so resource hosted under facilityenrich (will share sample) cannot be accessed by them.
-AS32581 - Facility Manager, does not have permission on CREDIT_PROGRAM so resource hosted under creditprogram (will share sample) cannot be accessed by them.
