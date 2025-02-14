@@ -1,0 +1,14 @@
+HTML Injection occurs when an application does not properly sanitize user-supplied input, allowing an attacker to inject arbitrary HTML content into web pages or emails. 
+This allows malicious HTML to be injected, which could result in:
+
+Phishing attacks by embedding fake links or forms.
+Malicious redirection to attacker-controlled sites.
+Script execution in email clients (in some cases if JavaScript is not filtered out).
+Defacement or altering the email content.
+Potential theft of user credentials or session tokens if forms or links are manipulated.
+
+In this case, the Subscription Name field in the email is vulnerable to HTML Injection 
+
+Recom:
+Input Validation: Implement strict input validation on all user inputs. Only allow expected characters.
+Output Encoding: Always encode user inputs before rendering them in emails (HTML entity encoding).
