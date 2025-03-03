@@ -1,11 +1,11 @@
-package test
+package cloudconfig.hostname_check
 
+# Set the default outcome to "pass".
 default result = "pass"
 
-# This rule checks whether the server hostname is defined. 
-# If it's missing or empty, we fail the policy check.
-violation {
-  # Replace "input.server.hostname" with the appropriate path to your hostname.
-  input.server.hostname == ""
-  result := "fail"
+# If the input data doesn't have a hostname or if it's empty, fail the check.
+result = "fail" {
+  # Adjust this path (input.server.hostname) to match your actual input JSON.
+  not input.server
+  or input.server.hostname == ""
 }
