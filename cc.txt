@@ -14,3 +14,9 @@ violation {
 result = "fail" {
   violation
 }
+
+{
+  "server": {
+    "hostname": "my-server-01"
+  }
+}
