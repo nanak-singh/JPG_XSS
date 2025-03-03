@@ -1,19 +1,16 @@
-package wiz.custom_hostname_check
+package hostname_check
 
-# By default, assume the resource passes the check.
 default result = "pass"
 
-# Violation rule: if the hostname is missing or empty.
 violation {
-  # Adjust the input path as needed based on your actual data.
   not input.server.hostname
   or input.server.hostname == ""
 }
 
-# Set the result to "fail" if a violation is detected.
 result = "fail" {
   violation
 }
+
 
 {
   "server": {
