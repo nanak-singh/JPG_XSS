@@ -1,11 +1,16 @@
-package cloudconfig.hostname_check
+package wiz.custom_hostname_check
 
-# Set the default outcome to "pass".
+# By default, assume the resource passes the check.
 default result = "pass"
 
-# If the input data doesn't have a hostname or if it's empty, fail the check.
-result = "fail" {
-  # Adjust this path (input.server.hostname) to match your actual input JSON.
-  not input.server
+# Violation rule: if the hostname is missing or empty.
+violation {
+  # Adjust the input path as needed based on your actual data.
+  not input.server.hostname
   or input.server.hostname == ""
+}
+
+# Set the result to "fail" if a violation is detected.
+result = "fail" {
+  violation
 }
