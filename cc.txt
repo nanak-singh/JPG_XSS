@@ -1,0 +1,11 @@
+package test
+
+default result = "pass"
+
+# This rule checks whether the server hostname is defined. 
+# If it's missing or empty, we fail the policy check.
+violation {
+  # Replace "input.server.hostname" with the appropriate path to your hostname.
+  input.server.hostname == ""
+  result := "fail"
+}
