@@ -16,3 +16,4 @@ if __name__ == "__main__":
     output_image = "output_with_payload.jpg"
     xss_payload = "<script>alert('XSS');</script>"
     embed_xss_payload(input_image, output_image, xss_payload)
+XJYx8G7YKNa7&jmw3B*b
