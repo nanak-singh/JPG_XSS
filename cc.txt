@@ -17,3 +17,4 @@ result = "fail" {
     "hostname": "my-server-01"
   }
 }
+It is recommended to implement strict validation of the Content-Length header to ensure it accurately reflects the size of the request body. The server should reject requests where the declared content length does not match the actual payload size.
