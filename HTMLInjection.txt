@@ -12,3 +12,8 @@ In this case, the Subscription Name field in the email is vulnerable to HTML Inj
 Recom:
 Input Validation: Implement strict input validation on all user inputs. Only allow expected characters.
 Output Encoding: Always encode user inputs before rendering them in emails (HTML entity encoding).
+
+
+Get-Content input.txt |
+Where-Object { $_ -notmatch '\.(jpg|jpeg|png|gif|webp|bmp|tiff|svg|ico|css|js|mjs|map|json|xml|txt|pdf|doc|docx|xls|xlsx|ppt|pptx|zip|rar|7z|tar|gz|bz2|xz|woff|woff2|ttf|otf|eot|mp3|wav|ogg|m4a|aac|flac|mp4|m4v|mov|avi|wmv|mkv|webm|flv)(\?.*)?$' } |
+Set-Content output.txt
